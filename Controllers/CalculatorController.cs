@@ -11,7 +11,25 @@ public class CalculatorController : Controller
     [HttpGet("/calculator")]
     public IActionResult Index()
     {
-        return Request.IsHtmx() ? PartialView() : View();
+        var rows = new List<CalculateRowViewModel>();
+        rows.Add(new CalculateRowViewModel
+        {
+            StaticValueOne = "Russell",
+            StaticValueTwo = 100,
+            ValueOne = 34,
+            ValueTwo = 12,
+            ValueThree = 100
+        });
+        rows.Add(new CalculateRowViewModel
+        {
+            StaticValueOne = "Steven",
+            StaticValueTwo = 150,
+            ValueOne = 11,
+            ValueTwo = 12,
+            ValueThree = 69
+        });
+        
+        return Request.IsHtmx() ? PartialView(rows) : View(rows);
     }
 
     [HttpGet("/calculator/edit")]
@@ -23,9 +41,6 @@ public class CalculatorController : Controller
     [HttpPost("/calculator/calculate-row")]
     public IActionResult CalculateRow(CalculateRowViewModel calculateRow)
     {
-        calculateRow.Total = calculateRow.StaticValueTwo + calculateRow.ValueOne + calculateRow.ValueTwo + calculateRow.ValueThree;
-        
         return PartialView(calculateRow);
     }
-    
 }

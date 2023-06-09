@@ -1,3 +1,4 @@
+@model List<CalculateRowViewModel>
 <h2>Calculator</h2>
 
 <p>Some calculator stuff</p>
@@ -12,30 +13,9 @@
     <th>Total</th>
     </thead>
     <tbody>
-    <tr>
-        <td>
-            Some read only stuff
-            <input type="hidden" name="StaticValueOne" value="Some read only stuff"/>
-        </td>
-        <td>
-            45
-            <input type="hidden" name="StaticValueTwo" value="45" />
-        </td>
-        <td hx-get="/calculator/edit?name=ValueOne&Value=10" hx-trigger="click once">
-            10
-            <input type="hidden" name="ValueOne" value="10" />
-        </td>
-        <td hx-get="/calculator/edit?name=ValueTwo&Value=10" hx-trigger="click once">
-            10
-            <input type="hidden" name="ValueTwo" value="10" />
-        </td>
-        <td hx-get="/calculator/edit?name=ValueThree&Value=10" hx-trigger="click once">
-            10
-            <input type="hidden" name="ValueThree" value="10" />
-        </td>
-        <td>
-            30
-        </td>
-    </tr>
+    @foreach (var item in Model)
+    {
+        @await Html.PartialAsync("CalculateRow", item)
+    }
     </tbody>
 </table>

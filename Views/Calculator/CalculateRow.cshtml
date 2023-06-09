@@ -1,26 +1,30 @@
 @model CalculateRowViewModel 
 <tr>
     <td>
-        @Model.StaticValueOne
-        <input type="hidden" name="StaticValueOne" value="@Model.StaticValueOne" />
+        <input type="text" readonly class="form-control-plaintext" name="StaticValueOne" value="@Model.StaticValueOne" />
     </td>
     <td>
-        @Model.StaticValueTwo
-        <input type="hidden" name="StaticValueTwo" value="@Model.StaticValueTwo" />
-    </td>
-    <td hx-get="/calculator/edit?name=ValueOne&Value=@Model.ValueOne" hx-trigger="click once">
-        @Model.ValueOne
-        <input type="hidden" name="ValueOne" value="@Model.ValueOne" />
-    </td>
-    <td hx-get="/calculator/edit?name=ValueTwo&Value=@Model.ValueTwo" hx-trigger="click once">
-        @Model.ValueTwo
-        <input type="hidden" name="ValueTwo" value="@Model.ValueTwo" />
-    </td>
-    <td hx-get="/calculator/edit?name=ValueThree&Value=@Model.ValueThree" hx-trigger="click once">
-        @Model.ValueThree
-        <input type="hidden" name="ValueThree" value="@Model.ValueThree" />
+        <input type="text" readonly class="form-control-plaintext" name="StaticValueTwo" value="@Model.StaticValueTwo" />
     </td>
     <td>
-        @Model.Total
+        <input type="text" readonly class="form-control" name="ValueOne" value="@Model.ValueOne"
+               hx-get="/calculator/edit?name=ValueOne&Value=@Model.ValueOne"
+               hx-trigger="click once"
+               hx-target="closest td" />
+    </td>
+    <td>
+        <input type="text" readonly class="form-control" name="ValueTwo" value="@Model.ValueTwo"
+               hx-get="/calculator/edit?name=ValueTwo&Value=@Model.ValueTwo"
+               hx-trigger="click once"
+               hx-target="closest td" />
+    </td>
+    <td>
+        <input type="text" readonly class="form-control" name="ValueThree" value="@Model.ValueThree"
+               hx-get="/calculator/edit?name=ValueThree&Value=@Model.ValueThree"
+               hx-trigger="click once"
+               hx-target="closest td" />
+    </td>
+    <td>
+        <input type="text" readonly class="form-control-plaintext" name="StaticValueOne" value="@Model.Total" />
     </td>
 </tr>

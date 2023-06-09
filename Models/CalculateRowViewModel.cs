@@ -7,5 +7,5 @@ public class CalculateRowViewModel
     public int ValueOne { get; set; }
     public int ValueTwo { get; set; }
     public int ValueThree { get; set; }
-    public int Total { get; set; }
+    public int Total => StaticValueTwo + ValueOne + ValueTwo + ValueThree;
 }
