@@ -1,10 +1,10 @@
 @model CalculateRowViewModel 
 <tr>
     <td>
-        <input type="text" readonly class="form-control-plaintext" asp-for="StaticValueOne" />
+        <input asp-for="StaticValueOne" readonly class="form-control-plaintext" />
     </td>
     <td>
-        <input type="text" readonly class="form-control-plaintext" asp-for="StaticValueTwo" />
+        <input asp-for="StaticValueTwo" readonly class="form-control-plaintext" />
     </td>
     <td>
         <input readonly
@@ -43,6 +43,6 @@
                hx-target="closest td" />
     </td>
     <td>
-        <input type="text" readonly class="form-control-plaintext" asp-for="StaticValueOne" />
+        <input asp-for="Total" readonly class="form-control-plaintext" />
     </td>
 </tr>
