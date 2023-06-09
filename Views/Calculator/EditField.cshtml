@@ -1,10 +1,12 @@
 @model EditFieldViewModel
 
 <input class="form-control"
-       type="text"
+       type="number"
        name="@Model.Name"
        value="@Model.Value"
-       hx-post="/calculator/calculate-row"
+       hx-post
+       hx-controller="Calculator"
+       hx-action="CalculateRow"
        hx-trigger="blur, keyup[key=='Enter']"
        hx-target="closest tr"
        hx-swap="outerHTML"

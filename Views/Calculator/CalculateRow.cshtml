@@ -1,30 +1,48 @@
 @model CalculateRowViewModel 
 <tr>
     <td>
-        <input type="text" readonly class="form-control-plaintext" name="StaticValueOne" value="@Model.StaticValueOne" />
+        <input type="text" readonly class="form-control-plaintext" asp-for="StaticValueOne" />
     </td>
     <td>
-        <input type="text" readonly class="form-control-plaintext" name="StaticValueTwo" value="@Model.StaticValueTwo" />
+        <input type="text" readonly class="form-control-plaintext" asp-for="StaticValueTwo" />
     </td>
     <td>
-        <input type="text" readonly class="form-control" name="ValueOne" value="@Model.ValueOne"
-               hx-get="/calculator/edit?name=ValueOne&Value=@Model.ValueOne"
+        <input readonly
+               class="form-control"
+               asp-for="ValueOne"
+               hx-get
+               hx-controller="Calculator"
+               hx-action="EditField"
+               hx-route-name="@nameof(Model.ValueOne)"
+               hx-route-value="@Model.ValueOne"
                hx-trigger="click once"
                hx-target="closest td" />
     </td>
     <td>
-        <input type="text" readonly class="form-control" name="ValueTwo" value="@Model.ValueTwo"
-               hx-get="/calculator/edit?name=ValueTwo&Value=@Model.ValueTwo"
+        <input readonly
+               class="form-control"
+               asp-for="ValueTwo"
+               hx-get
+               hx-controller="Calculator"
+               hx-action="EditField"
+               hx-route-name="@nameof(Model.ValueTwo)"
+               hx-route-value="@Model.ValueTwo"
                hx-trigger="click once"
                hx-target="closest td" />
     </td>
     <td>
-        <input type="text" readonly class="form-control" name="ValueThree" value="@Model.ValueThree"
-               hx-get="/calculator/edit?name=ValueThree&Value=@Model.ValueThree"
+        <input readonly
+               class="form-control"
+               asp-for="ValueThree"
+               hx-get
+               hx-controller="Calculator"
+               hx-action="EditField"
+               hx-route-name="@nameof(Model.ValueThree)"
+               hx-route-value="@Model.ValueThree"
                hx-trigger="click once"
                hx-target="closest td" />
     </td>
     <td>
-        <input type="text" readonly class="form-control-plaintext" name="StaticValueOne" value="@Model.Total" />
+        <input type="text" readonly class="form-control-plaintext" asp-for="StaticValueOne" />
     </td>
 </tr>
