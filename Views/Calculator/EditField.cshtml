@@ -1,0 +1,11 @@
+@model EditFieldViewModel
+
+<td>
+    <input type="text" name="@Model.Name" value="@Model.Value"
+           hx-post="/calculator/calculate-row"
+           hx-trigger="blur, keyup[key=='Enter']"
+           hx-target="closest tr"
+           hx-swap="outerHTML"
+           hx-include="closest tr"
+           autofocus/>
+</td>

@@ -1,0 +1,26 @@
+@model CalculateRowViewModel 
+<tr>
+    <td>
+        @Model.StaticValueOne
+        <input type="hidden" name="StaticValueOne" value="@Model.StaticValueOne" />
+    </td>
+    <td>
+        @Model.StaticValueTwo
+        <input type="hidden" name="StaticValueTwo" value="@Model.StaticValueTwo" />
+    </td>
+    <td hx-get="/calculator/edit?name=ValueOne&Value=@Model.ValueOne" hx-trigger="click once">
+        @Model.ValueOne
+        <input type="hidden" name="ValueOne" value="@Model.ValueOne" />
+    </td>
+    <td hx-get="/calculator/edit?name=ValueTwo&Value=@Model.ValueTwo" hx-trigger="click once">
+        @Model.ValueTwo
+        <input type="hidden" name="ValueTwo" value="@Model.ValueTwo" />
+    </td>
+    <td hx-get="/calculator/edit?name=ValueThree&Value=@Model.ValueThree" hx-trigger="click once">
+        @Model.ValueThree
+        <input type="hidden" name="ValueThree" value="@Model.ValueThree" />
+    </td>
+    <td>
+        @Model.Total
+    </td>
+</tr>
