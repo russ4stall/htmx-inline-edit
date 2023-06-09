@@ -20,6 +20,7 @@ public class CalculatorController : Controller
             ValueTwo = 12,
             ValueThree = 100
         });
+        
         rows.Add(new CalculateRowViewModel
         {
             StaticValueOne = "Steven",
